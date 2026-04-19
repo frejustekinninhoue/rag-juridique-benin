@@ -66,12 +66,11 @@ GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxx
 Téléchargez les textes officiels et placez-les dans `data/raw/` :
 
 | Document | Source | Nom de fichier recommandé |
-|----------|--------|--------------------------|
-| Code du Travail du Bénin (Loi N°98-004) | [Secrétariat général du Gouvernement du Bénin](https://sgg.gouv.bj › doc › loi-98-004) | `droit_travail_benin.pdf` |
-| Code Foncier et Domanial (Loi N°2013-01) | [ANDF](https://andf.bj › wp-content › uploads › 2024/10) | `code_foncier_benin.pdf` |
-|Code Foncier et Domanial (Loi n° 2017-15) |
-[Food and Agriculture Organization](https://faolex.fao.org › docs › pdf › Ben174252) |
-Loi n°2017-15 modifiant et complétant la loi n° 2013-01 |
+|----------|--------|---------------------------|
+| Code du Travail du Bénin (Loi N°98-004) | [Secrétariat général du Gouvernement du Bénin](https://sgg.gouv.bj/doc/loi-98-004) | `droit_travail_benin.pdf` |
+| Code Foncier et Domanial (Loi N°2013-01) | [ANDF](https://andf.bj/wp-content/uploads/2024/10) | `code_foncier_benin.pdf` |
+| Code Foncier et Domanial (Loi N°2017-15) | [Food and Agriculture Organization](https://faolex.fao.org/docs/pdf/Ben174252) | `loi_2017_15_modification_code_foncier.pdf` |
+
 
 
 ### Étape 5 — Indexer les documents
