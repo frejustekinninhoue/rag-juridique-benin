@@ -1,25 +1,18 @@
-# ── LLM & RAG ──────────────────────────────────────────────────────────────
+streamlit==1.38.0
+python-dotenv==1.0.1
+
+numpy==1.26.4
+pandas==2.2.2
+
 langchain==0.2.16
+langchain-core==0.2.43
 langchain-community==0.2.16
+langchain-text-splitters==0.2.4
 langchain-groq==0.1.9
+langchain-chroma==0.1.4
+chromadb==0.5.5
+
 langchain-huggingface==0.0.3
-
-# ── Embeddings (multilingue, gratuit, local) ────────────────────────────────
 sentence-transformers==3.0.1
-
-# ── Base vectorielle ────────────────────────────────────────────────────────
-langchain-chroma==0.1.2
-
-# ── Traitement PDF / DOCX ───────────────────────────────────────────────────
-pypdf==4.3.1
 pdfplumber==0.11.4
 python-docx==1.1.2
-docx2txt==0.8
-
-# ── Interface ───────────────────────────────────────────────────────────────
-streamlit==1.38.0
-streamlit-chat==0.1.1
-
-# ── Utilitaires ─────────────────────────────────────────────────────────────
-python-dotenv==1.0.1
-tqdm==4.66.5
