@@ -17,6 +17,12 @@ from typing import List, Dict, Any
 import streamlit as st
 from dotenv import load_dotenv
 
+st.write("DEBUG cwd:", os.getcwd())
+st.write("DEBUG CHROMA_DB_PATH env:", os.getenv("CHROMA_DB_PATH"))
+st.write("DEBUG CHROMA_DB_PATH exists:", Path(os.getenv("CHROMA_DB_PATH", "./data/chroma_db")).exists())
+st.write("DEBUG ./data exists:", Path("./data").exists())
+st.write("DEBUG ./data/chroma_db exists:", Path("./data/chroma_db").exists())
+
 # LangChain / RAG
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
