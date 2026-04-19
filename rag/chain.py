@@ -25,7 +25,7 @@ load_dotenv()
 
 # ── Configuration ───────────────────────────────────────────────────────────
 CHROMA_DB_PATH = os.getenv("CHROMA_DB_PATH", "./data/chroma_db")
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
 GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
 TOP_K = int(os.getenv("TOP_K", 8))
 
@@ -227,21 +227,21 @@ def _get_embeddings() -> HuggingFaceEmbeddings:
         encode_kwargs={"normalize_embeddings": True},
     )
 
-
 def _get_llm() -> ChatGroq:
-    if not GROQ_API_KEY or GROQ_API_KEY == "votre_cle_groq_ici":
+    api_key = os.getenv("GROQ_API_KEY")
+    if not api_key:
+        try:
+            import streamlit as st
+            api_key = st.secrets.get("GROQ_API_KEY")
+        except Exception:
+            api_key = None
+
+    if not api_key or api_key == "votre_cle_groq_ici":
         raise ValueError(
-            "❌ Clé Groq manquante !\n"
-            "1. Créez un compte gratuit sur https://console.groq.com\n"
-            "2. Copiez votre clé API\n"
-            "3. Ajoutez GROQ_API_KEY=... dans le fichier .env"
+            "❌ Clé Groq manquante ! Ajoutez GROQ_API_KEY dans Streamlit Secrets."
         )
-    return ChatGroq(
-        api_key=GROQ_API_KEY,
-        model_name=GROQ_MODEL,
-        temperature=0,
-        max_tokens=2048,
-    )
+    return ChatGroq(api_key=api_key, model_name=GROQ_MODEL, temperature=0, max_tokens=2048)
+
 
 
 def clean_text(text: str) -> str:
