@@ -5,7 +5,7 @@
 
 ---
 
-## 🗺️ Architecture
+##  Architecture
 
 ```
 Question utilisateur
@@ -28,7 +28,7 @@ Question utilisateur
 
 ---
 
-## 🚀 Installation locale (étape par étape)
+##  Installation locale (étape par étape)
 
 ### Étape 1 — Cloner et installer
 
@@ -67,10 +67,12 @@ Téléchargez les textes officiels et placez-les dans `data/raw/` :
 
 | Document | Source | Nom de fichier recommandé |
 |----------|--------|--------------------------|
-| Code du Travail du Bénin (Loi N°98-004) | [ILO NatLex](https://www.ilo.org/dyn/natlex/natlex4.detail?p_lang=fr&p_isn=49687) | `droit_travail_benin.pdf` |
-| Code Foncier et Domanial (Loi N°2013-01) | [OHADA](http://www.ohada.com) | `code_foncier_benin.pdf` |
+| Code du Travail du Bénin (Loi N°98-004) | [Secrétariat général du Gouvernement du Bénin](https://sgg.gouv.bj › doc › loi-98-004) | `droit_travail_benin.pdf` |
+| Code Foncier et Domanial (Loi N°2013-01) | [ANDF](https://andf.bj › wp-content › uploads › 2024/10) | `code_foncier_benin.pdf` |
+|Code Foncier et Domanial (Loi n° 2017-15) |
+[Food and Agriculture Organization](https://faolex.fao.org › docs › pdf › Ben174252) |
+Loi n°2017-15 modifiant et complétant la loi n° 2013-01 |
 
-> 💡 **Astuce :** Cherchez aussi sur http://www.legibenin.net et http://www.jo.gouv.bj
 
 ### Étape 5 — Indexer les documents
 
@@ -87,11 +89,11 @@ Résultat : la base vectorielle est créée dans `data/chroma_db/`
 streamlit run app.py
 ```
 
-Ouvrez http://localhost:8501 dans votre navigateur. 🎉
+Ouvrez http://localhost:8501 dans votre navigateur. 
 
 ---
 
-## 🌍 Déploiement gratuit sur Streamlit Cloud
+##  Déploiement gratuit sur Streamlit Cloud
 
 > Accessible à tout le monde, sans paiement.
 
@@ -129,16 +131,16 @@ Dans Streamlit Cloud → **Settings** → **Secrets**, ajoutez :
 GROQ_API_KEY = "gsk_votre_cle_ici"
 GROQ_MODEL = "llama-3.1-8b-instant"
 CHROMA_DB_PATH = "./data/chroma_db"
-TOP_K = "5"
+TOP_K = "8"
 ```
 
-### Étape 5 — Votre app est en ligne ! 🎉
+### Étape 5 — Votre app est en ligne ! 
 
 Partagez le lien `https://VOTRE_APP.streamlit.app` avec tout le monde.
 
 ---
 
-## 📁 Structure du projet
+##  Structure du projet
 
 ```
 rag-juridique-benin/
@@ -154,13 +156,13 @@ rag-juridique-benin/
 │   ├── raw/                  # PDFs sources (non versionnés)
 │   └── chroma_db/            # Base vectorielle (versionnée pour déploiement)
 └── .streamlit/
-    ├── config.toml           # Thème (couleurs du Bénin 🇧🇯)
+    ├── config.toml           # Thème (couleurs du Bénin )
     └── secrets.toml.example  # Template secrets
 ```
 
 ---
 
-## 💰 Coûts — 100% gratuit
+##  Coûts — 100% gratuit
 
 | Service | Plan gratuit |
 |---------|-------------|
@@ -171,7 +173,7 @@ rag-juridique-benin/
 
 ---
 
-## 🔧 Personnalisation
+##  Personnalisation
 
 **Ajouter d'autres textes de loi :**
 ```bash
