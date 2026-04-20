@@ -6,7 +6,6 @@ __pycache__/
 *.pyc
 
 # Base vectorielle (trop lourde pour GitHub)
-#data/chroma_db/
 
 # Secrets Streamlit
 .streamlit/secrets.toml
