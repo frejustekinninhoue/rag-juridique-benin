@@ -7,6 +7,7 @@ from __future__ import annotations
 import os
 import re
 import tempfile
+import streamlit as st
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -220,12 +221,14 @@ def route_prompt(question: str) -> ChatPromptTemplate:
 # HELPERS
 # ═══════════════════════════════════════════════════════════════════════════
 
-def _get_embeddings() -> HuggingFaceEmbeddings:
-    return HuggingFaceEmbeddings(
+def _get_embeddings():
+    emb = HuggingFaceEmbeddings(
         model_name=EMBEDDING_MODEL,
         model_kwargs={"device": "cpu"},
         encode_kwargs={"normalize_embeddings": True},
     )
+    return emb
+
 
 def _get_llm() -> ChatGroq:
     api_key = os.getenv("GROQ_API_KEY")
@@ -348,6 +351,10 @@ def load_retriever(
     collection_name: str = COLLECTION_LEGAL,
 ):
     embeddings = _get_embeddings()
+    # debug temporaire
+    print("DEBUG embeddings type:", type(embeddings))
+    print("DEBUG embeddings attrs:", hasattr(embeddings, "embed_query"), hasattr(embeddings, "embed_documents"))
+
     vectorstore = Chroma(
         persist_directory=persist_directory,
         embedding_function=embeddings,

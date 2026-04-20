@@ -15,7 +15,7 @@ from tqdm import tqdm
 
 import pdfplumber
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
+#from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 
