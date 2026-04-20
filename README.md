@@ -1,3 +1,14 @@
+---
+title: RAG Juridique Benin
+emoji: ⚖️
+colorFrom: green
+colorTo: red
+sdk: docker
+app_port: 7860
+---
+
+
+
 # ⚖️ Assistant Juridique Béninois — RAG
 
 > Posez vos questions sur le **Droit du Travail** et le **Code Foncier** du Bénin.  
@@ -189,6 +200,14 @@ GROQ_MODEL=mixtral-8x7b-32768        # Très bon pour le français
 ```
 
 ---
+
+Application Streamlit déployée via Docker sur Hugging Face Spaces.
+
+## Variables/Secrets à configurer dans HF Spaces
+- `GROQ_API_KEY`
+- `CHROMA_DB_PATH` (ex: `./data/chroma_db`)
+- `GROQ_MODEL` (optionnel)
+
 
 ## ⚠️ Avertissement légal
 
