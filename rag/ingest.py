@@ -16,6 +16,7 @@ from tqdm import tqdm
 import pdfplumber
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 #from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 
@@ -101,6 +102,8 @@ def chunk_documents(raw_docs: list[dict]) -> list[dict]:
     return chunks
 
 
+from langchain_chroma import Chroma
+
 def build_vectorstore(chunks: list[dict]) -> Chroma:
     """
     Génère les embeddings et stocke dans ChromaDB.
@@ -116,6 +119,8 @@ def build_vectorstore(chunks: list[dict]) -> Chroma:
     metadatas = [c["metadata"] for c in chunks]
 
     print(f" Construction de la base vectorielle ({len(texts)} chunks)...")
+
+    # Utilisation du nouveau package langchain_chroma
     vectorstore = Chroma.from_texts(
         texts=texts,
         embedding=embeddings,
@@ -123,7 +128,7 @@ def build_vectorstore(chunks: list[dict]) -> Chroma:
         persist_directory=CHROMA_DB_PATH,
         collection_name="droit_beninois",
     )
-    vectorstore.persist()
+
     print(f" Base vectorielle sauvegardée dans '{CHROMA_DB_PATH}'")
     return vectorstore
 
